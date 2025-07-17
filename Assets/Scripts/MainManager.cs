@@ -77,8 +77,10 @@ public class MainManager : MonoBehaviour
         
         if(m_Points > GameManager.instance.HighScoreNum)
         {
+            GameManager.instance.TempPlayer = GameManager.instance.PlayerName;
             GameManager.instance.HighScoreNum = m_Points;
             GameManager.instance.SaveData();
         }
+        
     }
 }

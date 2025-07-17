@@ -9,6 +9,6 @@ public class GameUI : MonoBehaviour
     public Text BestScoreText;
     private void Awake()
     {
-        BestScoreText.text = "Best Score: " + GameManager.instance.PlayerName + " : " + GameManager.instance.HighScoreNum;
+        BestScoreText.text = "Best Score: " + GameManager.instance.TempPlayer + " : " + GameManager.instance.HighScoreNum;
     }
 }

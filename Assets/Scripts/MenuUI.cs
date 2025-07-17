@@ -15,17 +15,13 @@ public class MenuUI : MonoBehaviour
     private void Start()
     {
         
-        if (GameManager.instance.PlayerName != null)
+        if (GameManager.instance.TempPlayer != null)
         {
             GameManager.instance.LoadData();
-            Name.text = "High Score By - " + GameManager.instance.PlayerName + " is " + GameManager.instance.HighScoreNum;
-            NameFromField.text = GameManager.instance.PlayerName;
+            Name.text = "High Score By - " + GameManager.instance.TempPlayer + " is " + GameManager.instance.HighScoreNum;
+            NameFromField.text = GameManager.instance.TempPlayer;
         }
-        else
-        {
-            Name.text = "High Score By - " + NameFromField.text + " is " + GameManager.instance.HighScoreNum;
-            NameFromField.text = GameManager.instance.PlayerName;
-        }
+        
 
 
     }

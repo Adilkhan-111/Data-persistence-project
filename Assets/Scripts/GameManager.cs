@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     
     public int HighScoreNum;
     public string PlayerName;
+    public string TempPlayer;
     private void Awake()
     {
         if (instance == null)
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
     {
         public int HighScoreNum;
         public string PlayerName;
+        public string TempPlayer;
     }
 
     public void SaveData()
@@ -48,6 +50,7 @@ public class GameManager : MonoBehaviour
         GameData data = new GameData();
         data.HighScoreNum = HighScoreNum;
         data.PlayerName = PlayerName;
+        data.TempPlayer = TempPlayer;
         string json = JsonUtility.ToJson(data);
         File.WriteAllText(Application.persistentDataPath + "/dataSaveFile.json", json);
 
@@ -61,6 +64,7 @@ public class GameManager : MonoBehaviour
             GameData data = JsonUtility.FromJson<GameData>(json);
             HighScoreNum = data.HighScoreNum;
             PlayerName = data.PlayerName;
+            TempPlayer = data.TempPlayer;
         }
     }
 }
